@@ -4,420 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Juan Manuel Lozano Niño</title>
-<meta name="description" content="Economist and M.A. student at Universidad de los Andes. Research assistant at CEDE working on the economics of crime, security and criminal justice policy.">
+<meta name="description" content="Economist and M.A. student in Economics at Universidad de los Andes. Research on the economics of crime, security and criminal justice policy.">
 <meta name="author" content="Juan Manuel Lozano Niño">
-
-<!-- Open Graph: how the link looks when shared -->
 <meta property="og:title" content="Juan Manuel Lozano Niño">
-<meta property="og:description" content="Economics of crime, security and criminal justice policy. Universidad de los Andes — CEDE.">
+<meta property="og:description" content="Economics of crime, security and criminal justice policy. Universidad de los Andes.">
 <meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#fdfdfc;
-    --surface:#f4f3f0;
-    --text:#1b1b1a;
-    --muted:#6b6a66;
-    --rule:#e0ded8;
-    --accent:#7a2e2e;
-    --accent-soft:#f0e7e5;
-    --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
-    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    --maxw:820px;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#16161a;
-      --surface:#1f1f24;
-      --text:#e8e6e1;
-      --muted:#9d9b95;
-      --rule:#33333a;
-      --accent:#e08585;
-      --accent-soft:#2a2023;
-    }
+    color-scheme: light;
+    --bg:#ffffff;
+    --text:#232323;
+    --muted:#6f6f6f;
+    --rule:#e6e4df;
+    --link:#1f4e79;
   }
 
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:var(--bg);
     color:var(--text);
-    font-family:var(--serif);
+    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
     font-size:17px;
-    line-height:1.65;
+    line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
 
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease;}
-  a:hover{border-bottom-color:var(--accent);}
+  a{color:var(--link);text-decoration:none;}
+  a:hover{text-decoration:underline;}
 
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky;top:0;z-index:20;
-    background:color-mix(in srgb, var(--bg) 92%, transparent);
-    backdrop-filter:saturate(180%) blur(8px);
-    border-bottom:1px solid var(--rule);
-  }
-  .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:13px 22px;
-    display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  }
-  .nav-name{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:-.01em;color:var(--text);border:0;}
-  .nav-links{display:flex;gap:20px;font-family:var(--sans);font-size:14px;}
-  .nav-links a{color:var(--muted);}
-  .nav-links a:hover{color:var(--accent);}
+  /* nav */
+  .topnav{padding:26px 0 0;font-size:15px;}
+  .topnav a{margin-right:20px;color:var(--link);}
+  .topnav a:last-child{margin-right:0;}
 
-  /* ---------- hero ---------- */
-  header.hero{padding:54px 0 12px;}
-  .hero-grid{display:grid;grid-template-columns:200px 1fr;gap:34px;align-items:start;}
-  @media (max-width:640px){
-    .hero-grid{grid-template-columns:1fr;gap:22px;}
-    .photo{max-width:170px;}
+  /* header */
+  header{padding:30px 0 6px;}
+  .head{display:flex;gap:30px;align-items:flex-start;}
+  @media (max-width:620px){
+    .head{flex-direction:column;gap:18px;}
+    .photo{width:150px;}
   }
   .photo{
-    width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;
-    background:var(--surface);border:1px solid var(--rule);
+    width:170px;height:170px;object-fit:cover;flex:none;
+    border-radius:2px;background:#f2f1ee;
   }
-  h1{
-    font-size:34px;line-height:1.15;margin:0 0 6px;font-weight:600;letter-spacing:-.015em;
-  }
-  .tagline{font-family:var(--sans);font-size:15px;color:var(--muted);margin:0 0 16px;line-height:1.5;}
-  .contact{font-family:var(--sans);font-size:14px;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;}
-  .contact span{color:var(--muted);}
+  h1{font-size:30px;font-weight:normal;margin:0 0 8px;letter-spacing:-.01em;}
+  .role{color:var(--muted);font-size:16px;margin:0 0 12px;}
+  .contact{font-size:15px;color:var(--muted);}
+  .contact a{color:var(--link);}
 
-  /* ---------- sections ---------- */
-  section{padding:34px 0 6px;}
+  /* sections */
+  section{padding:30px 0 0;}
   h2{
-    font-family:var(--sans);font-size:12px;font-weight:600;
-    text-transform:uppercase;letter-spacing:.11em;color:var(--muted);
-    margin:0 0 18px;padding-bottom:9px;border-bottom:1px solid var(--rule);
+    font-size:19px;font-weight:normal;font-style:italic;
+    margin:0 0 14px;padding-bottom:6px;border-bottom:1px solid var(--rule);
   }
-  h3{font-size:18px;font-weight:600;margin:0 0 4px;line-height:1.35;}
-  p{margin:0 0 15px;}
-  .lead{font-size:18px;}
+  p{margin:0 0 14px;}
 
-  /* ---------- interest tags ---------- */
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 4px;padding:0;list-style:none;}
-  .tags li{
-    font-family:var(--sans);font-size:12.5px;color:var(--muted);
-    border:1px solid var(--rule);border-radius:999px;padding:3px 11px;background:var(--surface);
-  }
+  /* publications */
+  .pub{margin:0 0 20px;}
+  .pub .t{display:block;}
+  .pub .meta{color:var(--muted);font-size:15px;}
+  .pub .note{font-size:15.5px;margin:3px 0 0;}
+  .pub .more{font-size:14.5px;margin-top:3px;}
+  .pub .more a{margin-right:14px;}
 
-  /* ---------- entries ---------- */
-  .entry{padding:16px 0;border-bottom:1px solid var(--rule);}
-  .entry:last-child{border-bottom:0;}
-  .entry-title{font-size:17px;font-weight:600;margin:0 0 3px;line-height:1.4;}
-  .entry-meta{font-family:var(--sans);font-size:13.5px;color:var(--muted);margin:0 0 7px;}
-  .entry-desc{font-size:15.5px;color:var(--text);margin:0;}
-  .authors em{font-style:normal;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
+  .teach{margin:0 0 16px;}
+  .teach .course{font-size:15.5px;}
+  .teach .when{color:var(--muted);font-size:15px;}
 
-  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px;}
-  .links a{
-    font-family:var(--sans);font-size:12.5px;font-weight:500;
-    border:1px solid var(--rule);border-radius:4px;padding:2.5px 9px;
-    color:var(--accent);background:var(--bg);
-  }
-  .links a:hover{background:var(--accent-soft);border-color:var(--accent);}
-  .badge{
-    font-family:var(--sans);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
-    color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:2px 7px;margin-left:8px;
-    vertical-align:1px;white-space:nowrap;
-  }
-
-  /* ---------- two-column blocks ---------- */
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 34px;}
-  @media (max-width:640px){.cols{grid-template-columns:1fr;}}
-  .skill-row{padding:9px 0;border-bottom:1px solid var(--rule);}
-  .skill-row:last-child{border-bottom:0;}
-  .skill-label{font-family:var(--sans);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);display:block;margin-bottom:2px;}
-  .skill-val{font-size:15.5px;}
-
-  /* ---------- footer ---------- */
   footer{
-    margin-top:46px;padding:22px 0 40px;border-top:1px solid var(--rule);
-    font-family:var(--sans);font-size:13px;color:var(--muted);
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    margin-top:40px;padding:16px 0 46px;border-top:1px solid var(--rule);
+    font-size:14px;color:var(--muted);
   }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-name" href="#top">Juan Manuel Lozano Niño</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#projects">Projects</a>
-      <a href="assets/cv/CV_JMLN.pdf">CV</a>
-    </div>
-  </div>
-</nav>
+  <nav class="topnav">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+    <a href="assets/cv/CV_JMLN.pdf">CV</a>
+  </nav>
 
-<div class="wrap" id="top">
-
-  <header class="hero">
-    <div class="hero-grid">
-      <!-- Reemplaza por tu foto: assets/img/prof_pic.jpg (cuadrada, ~600x600px) -->
+  <header>
+    <div class="head">
       <img class="photo" src="assets/img/4582174e-f56b-43e8-bfa8-e0ad2655fb13.jpeg" alt="Juan Manuel Lozano Niño">
       <div>
         <h1>Juan Manuel Lozano Niño</h1>
-        <p class="tagline">
-          M.A. student in Economics and research assistant at CEDE, Universidad de los Andes.<br>
-          I work on the economics of crime, security and criminal justice policy.
+        <p class="role">Economist · M.A. student in Economics, Universidad de los Andes · Bogotá, Colombia</p>
+        <p class="contact">
+          <a href="mailto:j.lozanon@uniandes.edu.co">j.lozanon@uniandes.edu.co</a> ·
+          <a href="https://github.com/juanmanuelozano">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/juan-manuel-lozano-niño-60463415a/">LinkedIn</a> ·
+          <a href="assets/cv/CV_JMLN.pdf">CV</a>
         </p>
-        <div class="contact">
-          <span>Bogotá, Colombia</span>
-          <span>·</span>
-          <a href="mailto:j.lozanon@uniandes.edu.co">j.lozanon@uniandes.edu.co</a>
-          <span>·</span>
-          <a href="https://github.com/juanmanuelozano">GitHub</a>
-          <span>·</span>
-          <a href="https://www.linkedin.com/in/juan-manuel-lozano-niño-60463415a/">LinkedIn</a>
-          <span>·</span>
-          <a href="assets/cv/CV_JuanManuelLozano_EN.pdf">CV (PDF)</a>
-        </div>
       </div>
     </div>
   </header>
 
   <section id="about">
     <h2>About</h2>
-    <p class="lead">
+    <p>
       I am an economist and a Government and Public Affairs graduate from Universidad de los Andes,
-      where I am completing an M.A. in Economics (PEG). I work as a research assistant at
-      <strong>CEDE</strong>, with Daniel Mejía on crime, security and the criminal justice system,
-      and with Hernando Zuleta on labor markets and official statistics.
+      where I am completing an M.A. in Economics. My research is in the economics of crime and security:
+      prisons and incarceration, case processing times in criminal proceedings, illegal markets and
+      illicit crops, and urban violence. I also work on labor markets and the quality of official
+      statistics.
     </p>
     <p>
-      Most of my work starts with data that does not yet exist in usable form: incident-level crime and
-      judicial records, household surveys, social security registries. I build those datasets, georeference
-      them, and take them to questions about how policy actually changes behavior — using applied causal
-      inference, spatial analysis and, where it helps, machine learning. I care as much about the mechanism
-      behind an estimate as about the estimate itself, which is probably what my second degree in public
-      affairs left me with.
+      I like questions where the answer depends on how an institution actually works, and I spend most of
+      my time building the data needed to answer them — crime and judicial records, household surveys,
+      administrative registries — and then arguing about what those data can and cannot support. I plan to
+      pursue a Ph.D. in Economics.
     </p>
     <p>
-      I intend to pursue a Ph.D. in Economics.
+      Outside of research I co-created <a href="https://youtube.com/playlist?list=PL92lHHzi8UBtQ0H8jmnjKu1ouZTDbeE5x">Al Margen</a>,
+      a podcast with Colombian macroeconomists, and I am on the board of the graduate research seminars at
+      the Faculty of Economics. I am a lifelong football player, a guitarist, and a slow but stubborn student of Greek.
     </p>
-    <ul class="tags">
-      <li>Economics of crime</li>
-      <li>Security policy</li>
-      <li>Criminal justice &amp; courts</li>
-      <li>Prisons and incarceration</li>
-      <li>Illegal markets &amp; illicit crops</li>
-      <li>Urban violence</li>
-      <li>Labor markets</li>
-      <li>Official statistics</li>
-    </ul>
+    <p>
+      I work in Stata, R and Python, and use LaTeX and ArcGIS Pro.
+    </p>
   </section>
 
   <section id="research">
-    <h2>Publications &amp; Working Papers</h2>
+    <h2>Publications and working papers</h2>
 
-    <div class="entry">
-      <p class="entry-title">Impuestos al cigarrillo, contrabando, recaudo fiscal e ingresos del crimen organizado</p>
-      <p class="entry-meta authors">
-        with Daniel Mejía · <em>Documento CEDE #18</em>, Universidad de los Andes, 2026
-      </p>
-      <p class="entry-desc">
-        How cigarette tax increases interact with smuggling, fiscal revenue and the income of organized
-        crime networks in Colombia, and where the revenue-maximizing tax stops being the welfare-maximizing one.
-      </p>
-      <div class="links">
+    <div class="pub">
+      <span class="t">Impuestos al cigarrillo, contrabando, recaudo fiscal e ingresos del crimen organizado</span>
+      <span class="meta">with Daniel Mejía. Documento CEDE #18, Universidad de los Andes, 2026.</span>
+      <p class="note">Cigarette taxes, smuggling, fiscal revenue and the income of organized crime in Colombia.</p>
+      <p class="more">
         <a href="https://ideas.repec.org/p/col/000089/022436.html">Paper</a>
-        <a href="https://www.larepublica.co/economia/impuesto-de-11-200-por-cajetilla-de-cigarrillo-sube-rentas-de-contrabando-a-900-000-millones-4370110">Press — La República</a>
-      </div>
+        <a href="https://www.larepublica.co/economia/impuesto-de-11-200-por-cajetilla-de-cigarrillo-sube-rentas-de-contrabando-a-900-000-millones-4370110">Press</a>
+      </p>
     </div>
 
-    <div class="entry">
-      <p class="entry-title">Cambio demográfico y mercado laboral en Colombia: cohortes entrantes, crecimiento económico y desafíos de política</p>
-      <p class="entry-meta authors">
-        with Hernando Zuleta, María del Pilar López-Uribe and G. Angarita · <em>Nota Macro #72</em>, 2026
-      </p>
-      <p class="entry-desc">
-        Entering cohorts, demographic change and their implications for employment and growth in Colombia.
-      </p>
-      <div class="links">
+    <div class="pub">
+      <span class="t">Cambio demográfico y mercado laboral en Colombia: cohortes entrantes, crecimiento económico y desafíos de política</span>
+      <span class="meta">with Hernando Zuleta, María del Pilar López-Uribe and Gabriela Angarita. Nota Macro #72, 2026.</span>
+      <p class="note">Entering cohorts, demographic change and their implications for employment and growth.</p>
+      <p class="more">
         <a href="https://hdl.handle.net/1992/79886">Paper</a>
-      </div>
-    </div>
-
-    <div class="entry">
-      <p class="entry-title">
-        Empleo formal en Colombia, 2023–2026: rezago de reporte, ponderación poblacional y la controversia GEIH-PILA
-        <span class="badge">In progress</span>
-      </p>
-      <p class="entry-meta authors">
-        with Hernando Zuleta · 2026
-      </p>
-      <p class="entry-desc">
-        Why Colombia's two main sources on formal employment disagree: reporting lags in social security
-        records, population weighting in the household survey, and what each series can actually support.
       </p>
     </div>
 
-    <div class="entry">
-      <p class="entry-title">Emerging Markets Multinationals Report 2025</p>
-      <p class="entry-meta">
-        Research team · Emerging Markets Institute, Cornell University, 2025
-      </p>
-      <p class="entry-desc">
-        Quantitative analysis and data management for the E20+1 ranking of leading emerging economies,
-        including a revised treatment of outliers in the classification, and analytical visualizations of
-        inward, outward and greenfield FDI flows.
-      </p>
-      <div class="links">
+    <div class="pub">
+      <span class="t">Empleo formal en Colombia, 2023–2026: rezago de reporte, ponderación poblacional y la controversia GEIH-PILA</span>
+      <span class="meta">with Hernando Zuleta. In progress, 2026.</span>
+      <p class="note">Why Colombia's two main sources on formal employment disagree, and what each series can support.</p>
+    </div>
+
+    <div class="pub">
+      <span class="t">Emerging Markets Multinationals Report 2025</span>
+      <span class="meta">Research team, Emerging Markets Institute, Cornell University, 2025.</span>
+      <p class="note">Quantitative analysis for the E20+1 ranking of leading emerging economies and analysis of FDI flows.</p>
+      <p class="more">
         <a href="https://doi.org/10.7298/KPTQ-JS56">Report</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="talks">
-    <h2>Selected Talks</h2>
-
-    <div class="entry">
-      <p class="entry-title">Economic Policy Seminar, Banco de la República</p>
-      <p class="entry-meta">Bogotá · September 2026</p>
-      <p class="entry-desc">
-        Presented <em>Empleo formal en Colombia, 2023–2026</em> (with Hernando Zuleta) to central bank
-        researchers and policymakers.
-      </p>
-    </div>
-
-    <div class="entry">
-      <p class="entry-title">Cigarette taxation and organized crime — public launch</p>
-      <p class="entry-meta">Bogotá · April 2026</p>
-      <p class="entry-desc">
-        Presented the study's results at an event convened by Philip Morris International, before national
-        media, customs police authorities, think tanks and departmental finance secretaries.
-      </p>
-    </div>
-
-    <div class="entry">
-      <p class="entry-title">ANIF labor market workshops</p>
-      <p class="entry-meta">Bogotá · July–September 2026</p>
-      <p class="entry-desc">
-        Three sessions with researchers from Banco de la República, ANIF and Universidad Javeriana on the
-        quality and consistency of Colombian labor statistics — informality, unemployment and participation.
       </p>
     </div>
   </section>
 
   <section id="teaching">
     <h2>Teaching</h2>
+    <p>
+      Faculty of Economics, Universidad de los Andes.
+    </p>
 
-    <div class="entry">
-      <p class="entry-title">Universidad de los Andes — Faculty of Economics</p>
-      <p class="entry-meta">Teaching assistant · 2024 – present</p>
-      <p class="entry-desc">
-        Head teaching assistant in Macroeconomics III (Prof. Daniel Mejía) and teaching assistant in
-        Introduction to Macroeconomics (Prof. Marc Hofstetter), where I run the weekly complementary lecture
-        for courses of up to 100 students. Previously course assistant in Econometrics I, Macroeconomics II,
-        Probability and Statistics, Integral Calculus and Probability, and Political Ideas — including
-        applied statistics sessions in STATA.
-      </p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects &amp; Service</h2>
-
-    <div class="entry">
-      <p class="entry-title">CEDE Jr. Seminar &amp; Brown Bag Seminar — Board of Directors</p>
-      <p class="entry-meta">Universidad de los Andes · 2026 – present</p>
-      <p class="entry-desc">
-        Organizing the graduate research seminars of the Faculty of Economics: scheduling sessions where
-        students present recent work and discuss methodological difficulties.
-      </p>
+    <div class="teach">
+      <span class="course">Head Teaching Assistant, Macroeconomics III</span><br>
+      <span class="when">2026 – present. Weekly complementary lecture, design and grading of problem sets and exams, course administration for up to 100 students.</span>
     </div>
 
-    <div class="entry">
-      <p class="entry-title">Macroeconomics Research Group — Co-Director</p>
-      <p class="entry-meta">Universidad de los Andes · 2025</p>
-      <p class="entry-desc">
-        Led a student research group producing Macro Notes on central banks' reliance on the Phillips curve,
-        pension reform and fiscal rule design. Launched <em>Al Margen</em>, a podcast with leading Colombian
-        macroeconomists.
-      </p>
-      <div class="links">
-        <a href="https://youtube.com/playlist?list=PL92lHHzi8UBtQ0H8jmnjKu1ouZTDbeE5x">Podcast — Al Margen</a>
-      </div>
+    <div class="teach">
+      <span class="course">Teaching Assistant, Introduction to Macroeconomics</span><br>
+      <span class="when">2026 – present. Weekly complementary lecture and assessment design.</span>
     </div>
 
-    <div class="entry">
-      <p class="entry-title">Impact Evaluation Research Group</p>
-      <p class="entry-meta">Universidad de los Andes · 2025</p>
-      <p class="entry-desc">
-        Student Reader on the effect of digital wallets on financial inclusion and household financial
-        independence in Colombia.
-      </p>
-    </div>
-
-    <div class="entry">
-      <p class="entry-title">Center for Security and Drug Studies (CESED)</p>
-      <p class="entry-meta">Universidad de los Andes · 2023</p>
-      <p class="entry-desc">
-        Research seminar on prison conditions, including field visits to La Picota penitentiary to study
-        human rights dynamics inside the system.
-      </p>
-    </div>
-  </section>
-
-  <section id="toolkit">
-    <h2>Toolkit</h2>
-    <div class="cols">
-      <div class="skill-row">
-        <span class="skill-label">Programming</span>
-        <span class="skill-val">STATA · R · Python · MATLAB · LaTeX · Excel</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Spatial</span>
-        <span class="skill-val">ArcGIS Pro — georeferencing, buffers, spatial joins</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Causal inference</span>
-        <span class="skill-val">RCTs · IV · RD · DiD and staggered DiD · TWFE · event studies · synthetic control · Bartik instruments · local projections</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Machine learning</span>
-        <span class="skill-val">Web scraping · trees, bagging, random forest, boosting, XGBoost · neural networks · spatial cross-validation</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Data</span>
-        <span class="skill-val">Colombian administrative records — GEIH, PILA, DANE, crime and judicial registries</span>
-      </div>
-      <div class="skill-row">
-        <span class="skill-label">Languages</span>
-        <span class="skill-val">Spanish (native) · English (IELTS 7.5) · French (B1) · Greek (A2)</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="entry">
-      <p class="entry-title">M.A. in Economics (PEG)</p>
-      <p class="entry-meta">Universidad de los Andes · 2026 – present</p>
-      <p class="entry-desc">Advanced Econometrics · Advanced Game Theory · Big Data and Machine Learning · Behavioral Economics</p>
-    </div>
-    <div class="entry">
-      <p class="entry-title">B.A. in Economics &nbsp;·&nbsp; B.A. in Government and Public Affairs</p>
-      <p class="entry-meta">Universidad de los Andes · 2022 – 2026</p>
-      <p class="entry-desc">Crime Economics · Macroeconomics from a Central Banking Perspective · Monetary Policy Theory · The Politics of Public Policy · Public Policy Analysis</p>
+    <div class="teach">
+      <span class="course">Course Assistant — Econometrics I, Macroeconomics II, Probability and Statistics, Integral Calculus and Probability, Political Ideas</span><br>
+      <span class="when">2024 – 2025. Review sessions and applied statistics classes in Stata for groups of up to 129 students.</span>
     </div>
   </section>
 
   <footer>
-    <span>© 2026 Juan Manuel Lozano Niño</span>
-    <span>Last updated September 2026</span>
+    Last updated September 2026.
   </footer>
 
 </div>
