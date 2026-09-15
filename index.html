@@ -23,8 +23,8 @@
     --rule:#e6e0d4;
 
     --ink:#1b3a53;          /* azul profundo: nombre y encabezados */
-    --accent:#b0532a;       /* terracota: enlaces */
-    --accent-dark:#8a3f1f;
+    --accent:#cc3d1f;       /* bermellón: enlaces */
+    --accent-dark:#a52f16;
     --green:#3c6b56;        /* verde: etiquetas y detalles */
     --sand:#f1ece0;         /* bloque tenue */
 
@@ -48,7 +48,7 @@
   .wrap{max-width:var(--wide);margin:0 auto;padding:0 32px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
 
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(176,83,42,.28);}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(204,61,31,.30);}
   a:hover{color:var(--accent-dark);border-bottom-color:var(--accent-dark);}
 
   /* ---------- nav ---------- */
@@ -63,7 +63,7 @@
     margin-left:22px;color:var(--ink);
     border-bottom:2px solid transparent;padding-bottom:3px;
   }
-  .topnav .links a:hover{color:var(--accent);border-bottom-color:rgba(176,83,42,.35);}
+  .topnav .links a:hover{color:var(--accent);border-bottom-color:rgba(204,61,31,.40);}
   .topnav .links a[aria-current="page"]{color:var(--accent-dark);border-bottom-color:var(--accent);}
   @media (max-width:520px){
     .topnav .links a{margin:0 18px 0 0;}
@@ -71,13 +71,13 @@
 
   /* ---------- header ---------- */
   header{padding:38px 0 30px;}
-  .head{display:grid;grid-template-columns:190px 1fr;gap:38px;align-items:center;}
+  .head{display:grid;grid-template-columns:260px 1fr;gap:42px;align-items:center;}
   @media (max-width:700px){
     .head{grid-template-columns:1fr;gap:20px;}
-    .photo{width:160px;height:160px;}
+    .photo{width:220px;height:220px;}
   }
   .photo{
-    width:190px;height:190px;object-fit:cover;
+    width:260px;height:260px;object-fit:cover;
     border-radius:3px;background:var(--sand);
     border:1px solid var(--rule);
     box-shadow:0 1px 0 rgba(0,0,0,.04);
@@ -190,7 +190,9 @@
         official statistics.
       </p>
       <p>
-        Macroeconomics and monetary policy have been a lasting interest since my undergraduate years. That
+        Macroeconomics and monetary policy have been a lasting interest since my undergraduate years, and
+        they still shape the way I read a policy question: what a rule commits a government to, how an
+        institution is designed, and why credibility is so much harder to build than to lose. That
         interest is also why I co-created
         <a href="https://youtube.com/playlist?list=PL92lHHzi8UBtQ0H8jmnjKu1ouZTDbeE5x">Al Margen</a>,
         a podcast with Colombian macroeconomists.
