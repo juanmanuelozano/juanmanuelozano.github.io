@@ -18,7 +18,6 @@
     color-scheme: light;
 
     --paper:#fbf9f4;        /* fondo cálido */
-    --card:#ffffff;
     --text:#232019;
     --muted:#777065;
     --rule:#e6e0d4;
@@ -29,12 +28,11 @@
     --green:#3c6b56;        /* verde: etiquetas y detalles */
     --sand:#f1ece0;         /* bloque tenue */
 
-    --wide:1000px;          /* ancho total */
-    --rail:150px;           /* columna de títulos */
+    --wide:1000px;
+    --rail:150px;
   }
 
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:var(--paper);
@@ -45,7 +43,6 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* franja de color superior */
   .stripe{height:5px;background:linear-gradient(90deg,var(--ink) 0 38%,var(--green) 38% 62%,var(--accent) 62% 100%);}
 
   .wrap{max-width:var(--wide);margin:0 auto;padding:0 32px;}
@@ -58,18 +55,22 @@
   .topnav{
     display:flex;justify-content:space-between;align-items:baseline;
     gap:18px;flex-wrap:wrap;
-    padding:20px 0 18px;border-bottom:1px solid var(--rule);
+    padding:20px 0 16px;border-bottom:1px solid var(--rule);
   }
   .topnav .me{font-size:16px;color:var(--ink);border:0;letter-spacing:.01em;}
   .topnav .links{font-size:15px;}
-  .topnav .links a{margin-left:22px;color:var(--ink);border-bottom-color:rgba(27,58,83,.25);}
-  .topnav .links a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .topnav .links a{
+    margin-left:22px;color:var(--ink);
+    border-bottom:2px solid transparent;padding-bottom:3px;
+  }
+  .topnav .links a:hover{color:var(--accent);border-bottom-color:rgba(176,83,42,.35);}
+  .topnav .links a[aria-current="page"]{color:var(--accent-dark);border-bottom-color:var(--accent);}
   @media (max-width:520px){
     .topnav .links a{margin:0 18px 0 0;}
   }
 
   /* ---------- header ---------- */
-  header{padding:38px 0 34px;}
+  header{padding:38px 0 30px;}
   .head{display:grid;grid-template-columns:190px 1fr;gap:38px;align-items:center;}
   @media (max-width:700px){
     .head{grid-template-columns:1fr;gap:20px;}
@@ -90,13 +91,15 @@
   .contact{font-size:15px;color:var(--muted);margin:0;}
   .contact .sep{color:var(--rule);padding:0 4px;}
 
-  /* ---------- secciones en dos columnas ---------- */
-  section{
-    display:grid;grid-template-columns:var(--rail) 1fr;gap:40px;
+  /* ---------- vistas ---------- */
+  .view{display:none;}
+  .view.on{display:grid;}
+  section.view{
+    grid-template-columns:var(--rail) 1fr;gap:40px;
     padding:30px 0;border-top:1px solid var(--rule);
   }
   @media (max-width:760px){
-    section{grid-template-columns:1fr;gap:12px;}
+    section.view{grid-template-columns:1fr;gap:12px;}
   }
   h2{
     font-size:19px;font-style:italic;font-weight:normal;color:var(--ink);
@@ -107,9 +110,7 @@
   p:last-child{margin-bottom:0;}
 
   /* ---------- publicaciones ---------- */
-  .pub{
-    padding:14px 0 15px;border-bottom:1px dotted var(--rule);
-  }
+  .pub{padding:14px 0 15px;border-bottom:1px dotted var(--rule);}
   .pub:first-child{padding-top:0;}
   .pub:last-child{border-bottom:0;padding-bottom:0;}
   .pub .t{display:block;color:var(--ink);font-size:17px;line-height:1.4;margin-bottom:3px;}
@@ -125,7 +126,6 @@
 
   /* ---------- enseñanza ---------- */
   .teach{padding:12px 0;border-bottom:1px dotted var(--rule);}
-  .teach:first-of-type{padding-top:0;}
   .teach:last-child{border-bottom:0;padding-bottom:0;}
   .teach .course{color:var(--ink);font-size:16px;}
   .teach .when{display:block;color:var(--muted);font-size:14.5px;margin-top:2px;}
@@ -134,7 +134,6 @@
     padding:7px 14px;margin:0 0 16px;font-size:15.5px;
   }
 
-  /* ---------- herramientas ---------- */
   .tools{font-size:15.5px;color:var(--muted);}
   .tools b{color:var(--text);font-weight:normal;}
 
@@ -150,11 +149,11 @@
 <div class="wrap">
 
   <nav class="topnav">
-    <a class="me" href="#top">Juan Manuel Lozano Niño</a>
+    <a class="me" href="#about">Juan Manuel Lozano Niño</a>
     <span class="links">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#research" data-nav="research">Research</a>
+      <a href="#teaching" data-nav="teaching">Teaching</a>
       <a href="assets/cv/CV_JMLN.pdf">CV</a>
     </span>
   </nav>
@@ -180,7 +179,7 @@
     </div>
   </header>
 
-  <section id="about">
+  <section class="view" id="about" data-view="about">
     <h2>About</h2>
     <div class="col">
       <p>
@@ -191,17 +190,23 @@
         official statistics.
       </p>
       <p>
+        Macroeconomics and monetary policy have been a lasting interest since my undergraduate years, and
+        they still shape the way I read a policy question: what a rule commits a government to, how an
+        institution is designed, and why credibility is so much harder to build than to lose. That
+        interest is also why I co-created
+        <a href="https://youtube.com/playlist?list=PL92lHHzi8UBtQ0H8jmnjKu1ouZTDbeE5x">Al Margen</a>,
+        a podcast with Colombian macroeconomists.
+      </p>
+      <p>
         I like questions where the answer depends on how an institution actually works, and I spend most
-        of my time building the data needed to answer them — crime and judicial records, household
-        surveys, administrative registries — and then arguing about what those data can and cannot
+        of my time building the data needed to answer them (crime and judicial records, household
+        surveys, administrative registries) and then arguing about what those data can and cannot
         support. I plan to pursue a Ph.D. in Economics.
       </p>
       <p>
-        Outside of research I co-created
-        <a href="https://youtube.com/playlist?list=PL92lHHzi8UBtQ0H8jmnjKu1ouZTDbeE5x">Al Margen</a>,
-        a podcast with Colombian macroeconomists, and I am on the board of the graduate research seminars
-        at the Faculty of Economics. I am a lifelong football player, a guitarist, and a slow but
-        stubborn student of Greek.
+        Outside of research I sit on the board of the graduate research seminars at the Faculty of
+        Economics. I am a lifelong football player, a guitarist, and a slow but stubborn student of
+        Greek.
       </p>
       <p class="tools">
         <b>Tools.</b> Stata, R and Python. LaTeX and ArcGIS Pro.
@@ -209,7 +214,7 @@
     </div>
   </section>
 
-  <section id="research">
+  <section class="view" id="research" data-view="research">
     <h2>Publications<br>and working papers</h2>
     <div class="col">
 
@@ -250,24 +255,24 @@
     </div>
   </section>
 
-  <section id="teaching">
+  <section class="view" id="teaching" data-view="teaching">
     <h2>Teaching</h2>
     <div class="col">
       <p class="where">Faculty of Economics, Universidad de los Andes</p>
 
       <div class="teach">
         <span class="course">Teaching Assistant, Macroeconomics III</span>
-        <span class="when">2026 – present. Weekly complementary lecture, design and grading of problem sets and exams, course administration for up to 100 students.</span>
+        <span class="when">2026 to present. Weekly complementary lecture, design and grading of problem sets and exams, course administration for up to 100 students.</span>
       </div>
 
       <div class="teach">
         <span class="course">Teaching Assistant, Introduction to Macroeconomics</span>
-        <span class="when">2026 – present. Weekly complementary lecture, design and grading of problem sets and exams, course administration for up to 80 students.</span>
+        <span class="when">2026 to present. Weekly complementary lecture, design and grading of problem sets and exams, course administration for up to 80 students.</span>
       </div>
 
       <div class="teach">
-        <span class="course">Course Assistant — Econometrics I, Macroeconomics II, Probability and Statistics, Integral Calculus and Probability, Political Ideas</span>
-        <span class="when">2024 – 2025. Review sessions and applied statistics classes in Stata for groups of up to 129 students.</span>
+        <span class="course">Course Assistant: Econometrics I, Macroeconomics II, Probability and Statistics, Integral Calculus and Probability, Political Ideas</span>
+        <span class="when">2024 to 2025. Review sessions and applied statistics classes in Stata for groups of up to 129 students.</span>
       </div>
     </div>
   </section>
@@ -278,5 +283,33 @@
   </footer>
 
 </div>
+
+<script>
+  (function () {
+    var views = document.querySelectorAll('[data-view]');
+    var navs  = document.querySelectorAll('[data-nav]');
+
+    function show(name) {
+      var found = false;
+      views.forEach(function (v) {
+        var on = v.getAttribute('data-view') === name;
+        v.classList.toggle('on', on);
+        if (on) found = true;
+      });
+      if (!found) { show('about'); return; }
+      navs.forEach(function (a) {
+        if (a.getAttribute('data-nav') === name) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+    }
+
+    function route() {
+      show((location.hash || '#about').replace('#', ''));
+    }
+
+    window.addEventListener('hashchange', route);
+    route();
+  })();
+</script>
 </body>
 </html>
